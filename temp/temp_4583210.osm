@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <osm version="0.6" generator="Overpass API">
 <note>The data included in this document is from www.openstreetmap.org. The data is made available under ODbL.</note>
-<meta osm_base="2016-05-11T12:49:02Z"/>
+<meta osm_base="2016-05-20T01:11:02Z"/>
 
   <node id="310568430" lat="30.3589331" lon="81.9498242"/>
   <node id="575909572" lat="30.0512370" lon="81.2716480"/>
-  <node id="575909762" lat="29.1762845" lon="83.6565803">
+  <node id="575909762" lat="29.1762371" lon="83.6565973">
     <tag k="natural" v="peak"/>
   </node>
   <node id="2119336534" lat="29.1586240" lon="83.6337970"/>
