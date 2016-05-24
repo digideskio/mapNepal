@@ -6,11 +6,11 @@ To that end, one could download osm data from http://download.geofabrik.de/ and 
 
 ## Steps
 
-0. Go to openstreetmap: https://www.openstreetmap.org/ and enter Kathmandu
+0. Go to openstreetmap: https://www.openstreetmap.org/ and enter Kathmandu ![](Search.png)
 
-1. Click on the node for the district of Kathmandu
+1. Click on the node for the district of Kathmandu ![](District.png)
 
-3. You can now see the node number (nodeNum) associated with the District of Kathmandu.
+3. You can now see the node number (nodeNum) associated with the District of Kathmandu  ![](Node.png)
 
 4. From your terminal, enter 'wget -O nodeNum.osm "http://overpass-api.de/api/interpreter?data=(rel(nodeNum);>);out;";'
 
