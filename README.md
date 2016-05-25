@@ -20,3 +20,4 @@ To that end, one could download osm data from http://download.geofabrik.de/ and 
 Just like the district of Kathmandu, osm file can be downloaded for other districts. Having known what the nodeNum is for each district, this process can be automated. To get poly files for all districts, do ' bash anchalBoundaries.sh'
 from your terminal. Now, if you have root installed in your machine, 'root -l graphAnchals.C' ( Or, equivalently,  'python graphAnchals.py')generates the plot for 14 anchals.
 ![](./plots/14Anchals.gif)
+![](./plots/75districts.gif)
