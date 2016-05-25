@@ -6,11 +6,11 @@ To that end, one could download osm data from http://download.geofabrik.de/ and 
 
 ## Steps
 
-0. Go to openstreetmap: https://www.openstreetmap.org/ and enter Kathmandu ![](Search.png)
+0. Go to openstreetmap: https://www.openstreetmap.org/ and enter Kathmandu ![](./plots/Search.png)
 
-1. Click on the node for the district of Kathmandu ![](District.png)
+1. Click on the node for the district of Kathmandu ![](./plots/District.png)
 
-3. You can now see the node number (nodeNum) associated with the District of Kathmandu  ![](Node.png)
+3. You can now see the node number (nodeNum) associated with the District of Kathmandu  ![](./plots/Node.png)
 
 4. From your terminal, enter 'wget -O nodeNum.osm "http://overpass-api.de/api/interpreter?data=(rel(nodeNum);>);out;";'
 
@@ -19,4 +19,4 @@ To that end, one could download osm data from http://download.geofabrik.de/ and 
 
 Just like the district of Kathmandu, osm file can be downloaded for other districts. Having known what the nodeNum is for each district, this process can be automated. To get poly files for all districts, do ' bash anchalBoundaries.sh'
 from your terminal. Now, if you have root installed in your machine, 'root -l graphAnchals.C' ( Or, equivalently,  'python graphAnchals.py')generates the plot for 14 anchals.
-![](14Anchals.gif)
+![](./plots/14Anchals.gif)
