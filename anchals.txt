@@ -1,0 +1,14 @@
+Mechi : Jhapa, Ilam, Panchthar, Taplejung
+Koshi : Morang, Sunsari,Bhojpur, Dhankuta, Terhathum, Sankhuwasabha
+Sagarmatha : Saptari, Siraha, Udayapur ,Khotang, Okhaldhunga, Solukhumbu
+Janakpur : Dhanusa, Mahottari, Sarlahi, Sindhuli, Ramechhap, Dolakha
+Bagmati : Bhaktapur, Dhading, Kathmandu, Kavrepalanchok, Lalitpur, Nuwakot, Rasuwa, Sindhupalchowk
+Narayani : Bara, Parsa, Rautahat, Chitwan, Makwanpur
+Gandaki : Gorkha, Kaski, Lamjung, Syangja, Tanahun, Manang
+Lumbini : Kapilvastu, Nawalparasi,Rupandehi, Arghakhanchi,Gulmi,Palpa
+Dhaulagiri : Baglung,Myagdi,Parbat,Mustang
+Rapti : Dang,Pyuthan,Rolpa, Rukum, Salyan
+Karnali : Dolpa, Humla, Jumla, Kalikot, Mugu
+Bheri : Banke,Bardiya, Surkhet, Dailekh, Jajarkot
+Seti : Kailali, Achham, Doti, Bajhang, Bajura
+Mahakali : Kanchanpur,Dadeldhura,Baitadi,Darchula
