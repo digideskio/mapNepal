@@ -1,5 +1,6 @@
 import re
 import sys
+import numpy as np
 
 """
 Handles information about districts, anchals.
@@ -15,7 +16,7 @@ Return districtName for a given NodeNum
 #Open the text file with districtName=>NodeNum
 #format:: district, NodeNum
 with open ('districts.txt') as f:
-        dlines = f.read().splitdlines()
+        dlines = f.read().splitlines()
 
 # Add each line to dictionary
 distNodes = {}
@@ -60,11 +61,11 @@ def get_DistNode(distName):
 def get_DistName(nodeNum):
         """
         Returns the nodeNumber associated with the given district
-        >>> get_DistNode('4588144')
+        >>> get_DistName('4588144')
         'Baglung'
-        >>> get_DistNode('4583247')
+        >>> get_DistName('4583247')
         'Kathmandu'
-        >>> get_DistNode('4589418')
+        >>> get_DistName('4589418')
         'Rautahat'
         """
         return nodeDists[str(nodeNum)]
