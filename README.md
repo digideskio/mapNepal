@@ -1,10 +1,18 @@
 ## mapNepal
 This is an attempt to generate map of different boundries within Nepal. There are 14 anchals, 75 districts and I'd like to be able to create a map myself without having to search in google. I am also interested in knowing about interesting features (how population varies between cities, how economic prosperity of a place depends on the proximity to Kathmandu, river+road networks, etc).
 
+## Usage
+1. All districts: 'python mapNepal.py -all'
 
-To that end, one could download osm data from http://download.geofabrik.de/ and extract boundaries from osm data. However, I found that cumbersome. There's a lot of things that I would need to install before I could get the geo-location of nodes that I am interested in. Instead, I use overpass API to directly download the osm file for a specific node that I am interested in. For a given node (say, district of Kathmandu), one would have to go through following steps:
+2. Single District: 'python mapNepal.py -d Baglung '
 
-## Steps
+3. Anchal: 'python mapNepal.py -a Bagmati'
+
+
+## Get Data
+One could download osm data from http://download.geofabrik.de/ and extract boundaries from osm data, which is rather cumbersome. There's a lot of things that one would need to install before I could get the geo-location of nodes that I am interested in. Instead, I use overpass API to directly download the osm file for a specific node that I am interested in. For a given node (say, district of Kathmandu), one would have to go through following steps to get node specific osm file:
+
+* Steps
 
 0. Go to openstreetmap: https://www.openstreetmap.org/ and enter Kathmandu ![](./plots/Search.png)
 
