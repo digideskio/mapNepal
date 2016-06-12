@@ -2,6 +2,7 @@ import re
 import sys
 import numpy as np
 
+
 """
 Handles information about districts, anchals.
 Return list of anchals
@@ -11,11 +12,11 @@ Return nodeNum for a givne district
 Return districtName for a given NodeNum
 """
 
-
+##TODO Add help menu
 
 #Open the text file with districtName=>NodeNum
 #format:: district, NodeNum
-with open ('districts.txt') as f:
+with open ('./data/districts.txt') as f:
         dlines = f.read().splitlines()
 
 # Add each line to dictionary
@@ -29,7 +30,7 @@ for dist in range(0,len(dlines)):
 
 anchalNodes = {}
 # Read anchal file
-with open ('anchals.txt') as f:
+with open ('./data/anchals.txt') as f:
         alines =  f.read().splitlines()
 
 #format:: Anchal : dist1, dist2, dist3,...
@@ -45,10 +46,10 @@ for anchal in range(0, len(alines)):
     for dists in distList:
             anchalNodes[thisAnchal].append(dists)
 
-
 def get_DistNode(distName):
         """
         Returns the nodeNumber associated with the given district
+        :param districtName: Name of district
         >>> get_DistNode('Baglung')
         '4588144'
         >>> get_DistNode('Kathmandu')
@@ -61,6 +62,7 @@ def get_DistNode(distName):
 def get_DistName(nodeNum):
         """
         Returns the nodeNumber associated with the given district
+        :param nodeNum: node Number of a district
         >>> get_DistName('4588144')
         'Baglung'
         >>> get_DistName('4583247')
@@ -74,7 +76,7 @@ def get_DistName(nodeNum):
 def get_AnchalDistricts(anchal):
         """
         Returns the list of districts for a given anchal
-
+        :param anchal: name of Anchal
 
         >>> get_AnchalDistricts('Janakpur')
         ['Dhanusa', 'Mahottari', 'Sarlahi', 'Sindhuli', 'Ramechhap', 'Dolakha']
@@ -104,6 +106,12 @@ def get_DistList():
         ['Mugu', 'Darchula', 'Chitwan', 'Jajarkot', 'Tanahun', 'Terhathum', 'Bhojpur', 'Dadeldhura', 'Okhaldhunga', 'Gorkha', 'Baitadi', 'Bajhang', 'Taplejung', 'Sindhupalchowk', 'Siraha', 'Morang', 'Kavrepalanchok', 'Ilam', 'Rasuwa', 'Lalitpur', 'Rolpa', 'Pyuthan', 'Solukhumbu', 'Sunsari', 'Myagdi', 'Panchthar', 'Kalikot', 'Parbat', 'Saptari', 'Gulmi', 'Rautahat', 'Doti', 'Kathmandu', 'Khotang', 'Dolakha', 'Dhading', 'Lamjung', 'Manang', 'Bhaktapur', 'Banke', 'Dhanusa', 'Achham', 'Humla', 'Palpa', 'Nuwakot', 'Ramechhap', 'Udayapur', 'Sarlahi', 'Dang', 'Dolpa', 'Jhapa', 'Jumla', 'Mustang', 'Kapilvastu', 'Kanchanpur', 'Bardiya', 'Dailekh', 'Sankhuwasabha', 'Rukum', 'Nawalparasi', 'Surkhet', 'Mahottari', 'Arghakhanchi', 'Kailali', 'Makwanpur', 'Bara', 'Salyan', 'Parsa', 'Sindhuli', 'Rupandehi', 'Dhankuta', 'Bajura', 'Kaski', 'Baglung', 'Syangja']
         """
         return distNodes.keys()
+
+def get_nodeList():
+        """
+        Return list of available nodes
+        """
+        return nodeDists.keys()
 
 
 def get_DistData(distName):

@@ -76,7 +76,7 @@ def get_dist_data(distNames):
     log.debug("Getting district data...")
 
     #read data from district file, and get corresponding node Number
-    with open ('districts.txt') as f:
+    with open ('./data/districts.txt') as f:
         dlines = f.read().splitlines()
         distNodes = {}
         nodeDists = {}
