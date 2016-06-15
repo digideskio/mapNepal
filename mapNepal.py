@@ -18,8 +18,12 @@ def main():
 
     #fig = plt.figure(figsize=FIGURE_SIZE)
     data = None
+    anchalDistricts = []
     if args.dist:
-        data = get_dist_data(args.dist)
+        for dist in args.dist:
+            anchalDistricts.append(dist)
+        print anchalDistricts
+        data = get_dist_data(anchalDistricts)
     elif args.anch:
         anchalDistricts = []
         for anchal in args.anch:
@@ -28,11 +32,15 @@ def main():
             anchalDistricts.extend(getNodes.get_AnchalDistricts(anchal))
         data = get_dist_data(anchalDistricts)
     elif args.allDist:
+        anchalDistricts.extend(getNodes.get_DistList())
         data = get_dist_data(getNodes.get_DistList())
-    elif args.nodeN:
-        data = get_dist_data([getNodes.get_DistName(str(args.nodeN))])
+    elif args.nodeNum:
+        data = get_dist_data([getNodes.get_DistName(str(args.nodeNum))])
     else:
         return
+
+    #data is a list of dict. of DataFrames for each dist with dist as key
+    #concat to same df?
     make_plots(data)
     return
 
@@ -59,11 +67,23 @@ def mapNepal_arg_parser():
     return parser
 
 def make_plots(data):
+    #data is list of dict==>dataframe
     fig, ax = plt.subplots(figsize=(10,8))
     #ax.set_aspect("equal")
     log.debug("Making plot...")
+    midPointsX = []
+    midPointsY = []
+    labels = []
     for key,val in data.iteritems():
-        plt.plot(val['lat'],val['long'],lw=2,color=np.random.rand(3,1))
+        #midPoints.append(tuple([val['lat'].mean(),val['long'].mean()]))
+        midPointsX.append(val['lat'].mean())
+        midPointsY.append(val['long'].mean())
+        labels.append(key[0:2])
+        plt.fill(val['lat'],val['long'],lw=2,color=np.random.rand(3,1))
+    print midPointsX, midPointsY
+    for label, xpt, ypt in zip(labels, midPointsX,midPointsY):
+        #print xpt, ypt, label
+        plt.text(xpt, ypt,label)
 
     plt.xlabel('Latitude')
     plt.ylabel('Longitude')
@@ -73,6 +93,7 @@ def make_plots(data):
 
 
 def get_dist_data(distNames):
+    # input list of district names, output=>[dist=>dataFrame]
     log.debug("Getting district data...")
 
     #read data from district file, and get corresponding node Number
@@ -96,6 +117,7 @@ def get_dist_data(distNames):
         fname = ""
         fname = './polyDistricts/poly_'+str(distNodes[dist])+'.txt'
         dfitems[dist] = pd.read_csv(fname,delim_whitespace=True,header=None,names=cols)
+        #print dfitems[dist].head()
     return dfitems
 
 #TODO: Keep things under the hood
