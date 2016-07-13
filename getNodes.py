@@ -18,7 +18,7 @@ log = logging.getLogger(__name__)
 #Open the text file with districtName=>NodeNum
 #format:: district, NodeNum
 with open ('./data/districts.txt') as f:
-        log.debug("Reading coordinates from districts file...")
+#        log.debug("Reading coordinates from districts file...")
         dlines = f.read().splitlines()
 
 # Add each line to dictionary
@@ -33,7 +33,7 @@ for dist in range(0,len(dlines)):
 anchalNodes = {}
 # Read anchal file
 with open ('./data/anchals.txt') as f:
-        log.debug("Reading coordinates from anchal file...")
+#        log.debug("Reading coordinates from anchal file...")
         alines =  f.read().splitlines()
 
 #format:: Anchal : dist1, dist2, dist3,...

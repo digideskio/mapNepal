@@ -27,8 +27,8 @@ def main():
     elif args.anch:
         anchalDistricts = []
         for anchal in args.anch:
-            log.debug("Ancha: %s, Districts: %s",anchal,
-                      getNodes.get_AnchalDistricts(anchal))
+#            log.debug("Ancha: %s, Districts: %s",anchal,
+#                      getNodes.get_AnchalDistricts(anchal))
             anchalDistricts.extend(getNodes.get_AnchalDistricts(anchal))
         data = get_dist_data(anchalDistricts)
     elif args.allDist:
@@ -70,7 +70,7 @@ def make_plots(data):
     #data is list of dict==>dataframe
     fig, ax = plt.subplots(figsize=(10,8))
     #ax.set_aspect("equal")
-    log.debug("Making plot...")
+#    log.debug("Making plot...")
     midPointsX = []
     midPointsY = []
     labels = []
@@ -94,7 +94,7 @@ def make_plots(data):
 
 def get_dist_data(distNames):
     # input list of district names, output=>[dist=>dataFrame]
-    log.debug("Getting district data...")
+#    log.debug("Getting district data...")
 
     #read data from district file, and get corresponding node Number
     with open ('./data/districts.txt') as f:

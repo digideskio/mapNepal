@@ -9,13 +9,14 @@ from getNodes import get_DistNode
 from getNodes import  get_AnchalDistricts
 import logging
 import argparse
+import time
 
 logging.basicConfig(level=logging.DEBUG)
 log = logging.getLogger(__name__)
 
 def main():
 
-    log.debug("Starting...")
+#    log.debug("Starting...")
     parser = mapNepal_arg_parser()
     args = parser.parse_args()
     cutData = 2
@@ -56,15 +57,15 @@ def main():
         # only keep 1/3rd of data, remove lines with single columns
         #strip = "awk 'NR%3==0 && NF>=2' ./temp/temp_"+str(node)+".txt > ./polyDistricts/poly_"+str(node)+".txt"
         # TODO::pass cutData as argument to awk
-        strip = "awk 'NR%1==0 && NF>=2' ./temp/temp_"+str(node)+".txt > ./tempdir/poly_"+str(node)+".txt"
+        strip = "awk 'NR%1==0 && NF>=2' ./temp/temp_"+str(node)+".txt > ./temp/poly_"+str(node)+".txt"
         #print strip
         subprocess.call(strip, shell=True)
-
+        time.sleep(5)
 
 ##TODO:Add exceptions
 
 def mapNepal_arg_parser():
-    log.debug("Parsing...")
+#    log.debug("Parsing...")
     parser = argparse.ArgumentParser()
     parser.add_argument(
         "-d", dest="dist", nargs="+", type=str, default=[],
