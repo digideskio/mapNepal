@@ -1,0 +1,103 @@
+# Administrative Maps of Nepal 
+
+------
+
+```{r echo=FALSE, warning=FALSE,message=FALSE}
+rm(list=ls()) #Clear the environment
+```
+
+
+## Level 0: Country
+```{r}
+library(ggplot2)
+library("sp")
+data <- readRDS("data/NPL_adm0.rds")
+plot(data,col = 'lightgrey', border = 'darkgrey')
+```
+
+### Level 1: Development Region
+```{r}
+data <- readRDS("data/NPL_adm1.rds")
+plot(data,col = 'lightgrey', border = 'darkgrey')
+```
+
+
+### Level 2: Districts
+```{r}
+data <- readRDS("data/NPL_adm2.rds")
+plot(data,col = 'lightgrey', border = 'darkgrey')
+```
+
+### Level 3: ?
+```{r}
+data <- readRDS("data/NPL_adm3.rds")
+plot(data,col = 'lightgrey', border = 'darkgrey')
+```
+
+
+### Level 4: VDCs
+```{r}
+data <- readRDS("data/NPL_adm4.rds")
+plot(data,col = 'lightgrey', border = 'darkgrey')
+```
+
+
+### District-wise
+
+#### Level 2: Districts
+```{r}
+data <- readRDS("data/NPL_adm3.rds")
+plot(data,col = 'red', border = 'green')
+# names(data)
+# table(data$NAME_3)
+# Name0:dist, Name1:Dev. region, Name2:anchals
+# Name2:districts, table(data$ID_3)
+
+```
+
+
+```{r}
+regionalValues <- runif(75)  # Simulate a value for each region between 0 and 1
+plot(data, col = gray(regionalValues), border = 0)
+
+plot(data, col=c(1:75),border="green")
+
+plot(data, col=(10:85),border="green")
+
+```
+
+
+
+```{r}
+require(RColorBrewer)
+plot(subset(data),col = 'lightgrey', border = 'darkgrey')
+```
+
+
+# Region
+```{r}
+names(data)
+table(data$NAME_1)
+
+plot(subset(data, NAME_1 == "Central"),col = 'lightgrey', border = 'darkgrey')
+
+plot(subset(data, NAME_1 == "East"),col = 'lightgrey', border = 'darkgrey')
+
+plot(subset(data, NAME_1 == "Far-Western"),col = 'lightgrey', border = 'darkgrey')
+
+plot(subset(data, NAME_1 == "Mid-Western"),col = 'lightgrey', border = 'darkgrey')
+
+plot(subset(data, NAME_1 == "West"),col = 'lightgrey', border = 'darkgrey')
+```
+
+### Anchals
+```{r}
+Anchals <- unique(data$NAME_2)
+```
+
+
+### Districts
+```{r}
+Districts <- unique(data$NAME_3)
+#Districts
+```
